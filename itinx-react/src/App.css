@@ -1,0 +1,233 @@
+* {
+  font-family: "Roboto";
+}
+
+.mainPage {
+  display: flex;
+}
+
+.menuBar {
+  width: 300px;
+  height: 800px;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: flex-start;
+  color: #458FA2;
+  align: center;
+  padding: calc(15px);
+  background-color: #484e51;
+}
+
+.header {
+  margin: calc(10px);
+  padding: calc(5px);
+  color: white;
+  font-size: 56px;
+}
+
+.Module {
+  text-align: center;
+  width: 1040px;
+  display: inline;
+  background-color: white;
+  font-size: calc(16px);
+  margin:15px;
+  padding: calc(5px);
+}
+
+.hpButton {
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  height: 65px;
+  background-color: #dadada;
+  color: #458FA2;
+  font-size: calc(24px);
+  padding: calc(5px);
+  border-radius: 5px;
+  border-color: #497F88;
+  margin:5px;
+}
+
+.homeButton {
+  text-align: center;
+  width: 175px;
+  background-color: #458FA2;
+  font-size: calc(20px);
+  padding: calc(5px);
+  border-radius: 5px;
+  border-color: #497F88;
+}
+
+.addButton {
+
+    background-color: #458FA2;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 2px;
+    border-color: #458FA2;
+    margin:10px;
+}
+
+.dataEntry {
+    text-align: left;
+    background-color: white;
+    font-size: calc(18px);
+    color: #458FA2;
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin:2px;
+    width: 160px;
+}
+
+.dbLookupField {
+    text-align: center;
+    font-size: calc(20px);
+    color: #458FA2;
+    padding: calc(4px);
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.Table{
+  align: center;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 10px;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 6px;
+}
+
+.Table thead th {
+  font-size: calc(18px);
+  color: #458FA2;
+  text-align: left;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.Table tbody td {
+  font-size: calc(12px);
+  color: #5b5b5b;
+  text-align: left;
+}
+
+a:hover {
+  color: #00F;
+}
+
+a {
+  color: #458FA2;
+}
+
+h1 {
+  margin: calc(5px);
+  padding: calc(5px);
+  font-size: 24px;
+  color: #458FA2;
+}
+
+h2 {
+  margin: calc(10px);
+  padding: calc(5px);
+  color: #458FA2;
+}
+
+
+.popup {
+  margin: calc(5px);
+  padding: calc(10px);
+  background-color: #f1f1f1;
+  position: relative;
+    width: 300px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    color: #458FA2;
+    align: center;
+    padding: calc(15px);
+}
+
+.popupbtn {
+  background-color: #458FA2;
+  color: white;
+  margin: calc(5px);
+  padding: calc(10px);
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+}
+
+.popup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+/*
+Show the popup on click
+.popup:visited .popup-content {display: block;} */
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #458FA2;
+  color: white;
+  margin: calc(5px);
+  padding: calc(10px);
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  color: white;
+  width: 100%;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {background-color: #458FA2;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #458FA2;}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
