@@ -1,4 +1,4 @@
-## Available Scripts
+# ItinX React Client
 
 In the `itinx-react` directory, you can run:
 

@@ -4,6 +4,7 @@ const mysql = require('mysql');
 // const aws = require('aws-sdk');
 // const ejs = require('ejs');
 var bodyParser = require('body-parser');
+var dotenv = require('dotenv').config('/.env');
 
 const app = express();
 
@@ -11,17 +12,21 @@ const app = express();
 
 const connection = mysql.createConnection({
   // Local MySQL Setup
-  host: 'localhost',
-  user: 'root',
-  password: 'dbuser123',
-  database: 'itinx-db'
-  /* // AWS Setup
-  host     : process.env.RDS_HOSTNAME,
-  user     : process.env.RDS_USERNAME,
-  password : process.env.RDS_PASSWORD,
-  port     : process.env.RDS_PORT,
-  database : process.env.RDS_DB_NAME
-  */
+  // host: 'localhost',
+  // user: 'root',
+  // password: 'dbuser123',
+  // database: 'itinx-db'
+  // Google Cloud setup
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASS
+  // AWS Setup
+  // host     : process.env.RDS_HOSTNAME,
+  // user     : process.env.RDS_USERNAME,
+  // password : process.env.RDS_PASSWORD,
+  // port     : process.env.RDS_PORT,
+  // database : process.env.RDS_DB_NAME
 });
 
 app.use(cors());
@@ -73,7 +78,7 @@ const createBedNightTable = `CREATE TABLE IF NOT EXISTS bednight_entries(
                         PRIMARY KEY (entry_id)
                     )`;
 
-const createServiceProviderView = `CREATE VIEW service_providers_v
+const createServiceProviderView = `CREATE OR REPLACE VIEW service_providers_v
                         AS SELECT
 						              a.entry_id entry_id,
                           a.propertyName propertyName,
@@ -100,6 +105,12 @@ connection.query(createPropertyTable, (err, results) => {
 });
 
 connection.query(createBedNightTable, (err, results) => {
+  if (err) {
+    console.log(err.message);
+  }
+});
+
+connection.query(createServiceProviderView, (err, results) => {
   if (err) {
     console.log(err.message);
   }
@@ -229,7 +240,7 @@ app.get('/bednightEntries/add', (req, res) => {
 app.get('/bednightEntries/getPortfolioRep', (req, res) => {
   const { propertyName } = req.query;
 
-  console.log(propertyName + "HeLLO World");
+  // console.log(propertyName + "HeLLO World");
 
   const GET_INFO_QUERY = `SELECT portfolio, rep FROM properties WHERE
     name = '${propertyName}'`;

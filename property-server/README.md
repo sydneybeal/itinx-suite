@@ -1,4 +1,10 @@
-## Available Scripts
+# ItinX React Backend
+
+## Step 1
+
+Create `.env` folder under property-server, reach out for credentials to use.
+
+## Step 2
 
 In the `property-server` directory, you can run:
 
